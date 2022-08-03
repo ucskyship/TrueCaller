@@ -1,4 +1,4 @@
-package africa.semicolon.trueCaller.data.repositoriess;
+package africa.semicolon.trueCaller.data.repositories;
 
 import africa.semicolon.trueCaller.data.models.User;
 
@@ -78,7 +78,6 @@ public class UserRepositoryImpl implements UserRepository {
             if (user.getEmail().equalsIgnoreCase(email)) {
                 return user;
             }
-            break;
         }
         return null;
     }

@@ -1,4 +1,4 @@
-package africa.semicolon.trueCaller.data.repositoriess;
+package africa.semicolon.trueCaller.data.repositories;
 
 import africa.semicolon.trueCaller.data.models.Contact;
 

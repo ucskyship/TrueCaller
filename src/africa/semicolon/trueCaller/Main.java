@@ -3,14 +3,20 @@ package africa.semicolon.trueCaller;
 import africa.semicolon.trueCaller.controller.UserController;
 import africa.semicolon.trueCaller.dtos.request.AddContactRequest;
 import africa.semicolon.trueCaller.dtos.request.RegisterRequest;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Scanner;
 
 
+@SpringBootApplication
 public class Main {
     private static final Scanner keypadInput = new Scanner(System.in);
     private static final UserController userController = new UserController();
     public static void main(String[] args) {
+
+        SpringApplication.run(Main.class, args);
+
         displayMainMenu();
     }
 

@@ -1,9 +1,9 @@
 package africa.semicolon.trueCaller.services;
 
-import africa.semicolon.trueCaller.data.models.Contact;
 import africa.semicolon.trueCaller.dtos.request.AddContactRequest;
 import africa.semicolon.trueCaller.dtos.request.RegisterRequest;
 import africa.semicolon.trueCaller.dtos.responses.AddContactResponse;
+import africa.semicolon.trueCaller.dtos.responses.AllContactResponse;
 import africa.semicolon.trueCaller.dtos.responses.RegisterUserResponse;
 
 import java.util.List;
@@ -14,6 +14,6 @@ public interface iUserService {
     int getNumberOfUsers();
     AddContactResponse addContact(AddContactRequest request);
 
-    List<Contact> findContactThatBelongsTo(String email);
+    List<AllContactResponse> findContactThatBelongsTo(String email);
 }
 
