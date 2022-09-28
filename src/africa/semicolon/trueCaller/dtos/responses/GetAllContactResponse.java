@@ -1,9 +1,11 @@
 package africa.semicolon.trueCaller.dtos.responses;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class AllContactResponse {
+@NoArgsConstructor
+public class GetAllContactResponse {
     private String id;
     private String firstName;
     private String lastName;

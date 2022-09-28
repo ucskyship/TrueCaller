@@ -1,17 +1,10 @@
 package africa.semicolon.trueCaller.data.repositories;
 
 import africa.semicolon.trueCaller.data.models.User;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface UserRepository {
-    User saveUser(User user);
-    void delete(User user);
-    void delete(int id);
-    User findById(int id);
-    int count();
-    List<User> findAll();
-    User searchUser(String username);
-
-    User findByEmail(String email);
+@Repository
+public interface UserRepository extends MongoRepository<User, String> {
+    User findUserByEmail(String userEmail);
 }

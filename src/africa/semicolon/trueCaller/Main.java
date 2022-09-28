@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Scanner;
 
-
 @SpringBootApplication
 public class Main {
     private static final Scanner keypadInput = new Scanner(System.in);
@@ -49,7 +48,7 @@ public class Main {
         contactRequest.setFirstName(input("Enter contact's First name"));
         contactRequest.setSecondName(input("Enter contact's second name"));
         contactRequest.setPhoneNumber(input("Enter contact's phone number"));
-        contactRequest.setEmail(input("Enter contact email"));
+
         contactRequest.setUserEmail(input("Enter user email"));
 
         userController.addContact(contactRequest);
@@ -63,7 +62,7 @@ public class Main {
         request.setPhoneNumber(input("Enter phone number"));
         request.setEmail(input("Enter email"));
         request.setPassword(input("Enter password"));
-        
+
         userController.registerUser(request);
         display("done");
         displayMainMenu();

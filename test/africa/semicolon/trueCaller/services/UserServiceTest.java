@@ -1,26 +1,28 @@
 package africa.semicolon.trueCaller.services;
 
 import africa.semicolon.trueCaller.data.repositories.UserRepository;
-import africa.semicolon.trueCaller.data.repositories.UserRepositoryImpl;
 import africa.semicolon.trueCaller.dtos.request.AddContactRequest;
 import africa.semicolon.trueCaller.dtos.request.RegisterRequest;
 import africa.semicolon.trueCaller.exceptions.UserExistsException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 public class  UserServiceTest {
+
+    @Autowired
     private UserService userService;
+
+    @Autowired
     UserRepository userRepository;
+
+    @Autowired
     ContactService iContactService;
 
-    @BeforeEach
-    void setUp() {
-        userRepository = new UserRepositoryImpl();
-        iContactService = new ContactService();
-        userService = new UserService(userRepository, iContactService);
-    }
 
     @Test
     public void registerTest() {
@@ -49,7 +51,7 @@ public class  UserServiceTest {
         request.setFirstName("juc");
         request.setLastName("jjc");
         request.setPassword("iLoveJesus222");
-//        userService.register(request);
+        userService.register(request);
 
         RegisterRequest request2 = new RegisterRequest();
         request2.setEmail("ucj@ucj.go");

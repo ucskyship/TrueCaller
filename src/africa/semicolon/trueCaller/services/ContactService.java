@@ -2,18 +2,19 @@ package africa.semicolon.trueCaller.services;
 
 import africa.semicolon.trueCaller.data.models.Contact;
 import africa.semicolon.trueCaller.data.repositories.ContactRepository;
-import africa.semicolon.trueCaller.data.repositories.ContactRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ContactService implements iContactService {
 
-    private final ContactRepository contactRepository;
+    @Autowired
+    private ContactRepository contactRepository;
 
-    public ContactService(){
-        contactRepository = new ContactRepositoryImpl();
-    }
     public Contact addNewContact(Contact contact) {
+        contactRepository.save(contact);
         return new Contact();
     }
 
